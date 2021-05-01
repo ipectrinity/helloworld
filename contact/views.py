@@ -17,8 +17,12 @@ def contact(request):
         contacts.save()
 
         ############
-        subject = config('subject')
-        reply =  config('reply')
+        subject = 'NoReply: Netflix and Chill'
+        reply =  """
+Hey there! 
+Thanks for contacting us! We appreciate your messages, and we've watched your message!
+Stay tuned to be the Netflix Junkie! 😉😎 
+~ Admin Of Netflix-and-Chill"""
         ############
 
 
