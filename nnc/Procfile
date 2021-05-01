@@ -1,0 +1,1 @@
+web: gunicorn nnc.wsgi --log-file -
