@@ -132,9 +132,9 @@
 
     nav h1:hover {
 
-      color: #353441;
+      color: #E6E6FA;
 
-      background: rgb(243, 10, 10);
+      background: #662d91;
       border-radius: 7px;
 
     }
@@ -433,17 +433,13 @@ filter:blur(100px);
 
     <ul class="fontlist">
 
-      <li><a href="#">HOME</a></li>
+      <li><a href="">Netflix'n'Chill</a></li>
 
-      <li><a href="#">STREAMING SHOWS</a></li>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
 
-      <li><a href="#">SERVICES</a></li>
+      <li><a href="{% url 'login-page' %}">Login</a></li>
 
-      <li><a href="#">SHOW REVIEWS</a></li>
-
-      <li><a href="#">WORK</a></li>
-
-      <li><a href="#">CONTACT US</a></li>
+      <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
 
     </ul>
 
@@ -472,15 +468,9 @@ filter:blur(100px);
         
         **other pages under construction! Stay tuned.**
       </p>
-
-
-      <div>
-        <p class="watch" id="grade">**Under Construction**</p>
-        <video class="cart" poster=clip.mp4 autoplay loop >
-          <source src="source.mp4" type="video/mp4">
-
-      </div>
-
+      <br>
+      <br>
+      
     </section>
 
   </main>
