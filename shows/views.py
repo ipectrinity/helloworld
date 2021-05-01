@@ -1,8 +1,31 @@
 from django.shortcuts import render
+from .models import Blog
 
 # Create your views here.
-def blog(request):
-    return render(request, 'blog.html')
+def blog_index(request):
+    #loading the dataset as whole
+    blog = Blog.objects.all
+        #blog-model data
+
+    context = {
+        'blog' : blog
+    }
+
+
+    return render(request, 'blog-index.html', context)
+
+
+
+def blog_view(request, slug):
+    blog = Blog.objects.filter(slug=slug).first()
+
+    context = {
+        'blog' : blog
+    }
+
+    return render(request, 'blog-view.html', context)
+
+
 
 def login(request):
     return render(request, 'login.html')
