@@ -8,7 +8,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Netflix'n'Chill</title>
+  <title>digonal nav</title>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
 
@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="{% static '/css/footer.css' %}">
   <style>
     /* i can use diffrent css here  */
     html,
@@ -49,7 +49,7 @@
 
       perspective: 800px;
 
-      background:rgba(0, 0, 0, 0.747);
+      background:rgb(255, 255, 255);
 
 
 
@@ -136,7 +136,7 @@
 
       color: #353441;
 
-      background:  #662d91;
+      background: rgb(243, 10, 10);
       border-radius: 7px;
 
     }
@@ -181,7 +181,7 @@
 
       background: rgb(27, 25, 25);
 
-      color: rgb(100, 19, 155);
+      color: red;
 
 
 
@@ -341,7 +341,7 @@
       font-family: 'Baloo Bhai 2', cursive;
       animation-name: car ;
       animation-iteration-count: infinite;
-      animation-duration: 6s;
+      animation-duration: 14s;
       animation-timing-function:ease-out;
 
 
@@ -393,13 +393,13 @@
 
       font-family: 'Zilla Slab', serif;
       animation-name: text;
-      animation-duration: 5s;
-      animation-iteration-count: 0;
+      animation-duration: 8s;
+      animation-iteration-count: 2;
     }
 
     .watch:hover {
       animation-name: text;
-      animation-duration: 5s;
+      animation-duration: 4s;
       animation-timing-function: ease-in-out;
     }
 
@@ -443,11 +443,6 @@
 filter:blur(100px);
 
     }
-    .random{
-
-      width: 400px;
-      height:400px;
-    }
   </style>
 
 </head>
@@ -460,19 +455,20 @@ filter:blur(100px);
 
     <ul class="fontlist">
 
-   <ul class="fontlist">
+      <li><a href="#">HOME</a></li>
 
-      <li><a href="">Netflix'n'Chill</a></li>
+      <li><a href="#">???</a></li>
 
-      <li><a href="{% url 'blog-index' %}">Nishant's Recommended</a></li>
 
-      <li><a href="{% url 'blog-view' %}">Blog ( Under Maintainence )</a></li>
+      <li><a href="#">STREAMING SHOWS</a></li>
 
-      <li><a href="{% url 'login-page' %}">Login / Sign-Up</a></li>
+      <li><a href="#">SERVICES</a></li>
 
-      <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+      <li><a href="#">SHOW REVIEWS</a></li>
 
-    </ul>
+      <li><a href="#">WORK</a></li>
+
+      <li><a href="#">CONTACT US</a></li>
 
     </ul>
 
@@ -506,36 +502,49 @@ filter:blur(100px);
       </span>
 
       <br>
-      <h2 class="heading">Welcome!</h2>
-      <p class="para">Welcome to Netlix’n’Chill
-Here you can stay tuned with the latest and the hottest of the Netflix shows. Read about them, watch the trailers, and express yourself! Here we got a community of Netflix-lovers who suggest great Shows and Movies! Watch on IOS, Android, even on your TV!
-Got a holiday? Come to your very own site to choose what should u explore now!
+      <h2 class="heading">What is NETFLIX?</h2>
+      <p class="para">Netflix is a subscription-based streaming service that allows our members to watch TV shows and movies without
+        commercials on an internet-connected device.
+
+        You can also download TV shows and movies to your iOS, Android, or Windows 10 device and watch without an
+        internet connection.
+
+        If you're already a member and would like to learn more about using Netflix, visit Getting started with
+        Netflix..</p>
 
 
-Some of the binge shows and movies, some comedy or any other way you like it! We got it for you! Be a permanent member of Netflix’n’Chill society and let’s make your purchase worth it!</p>
 
 
+      <h2 class="heading">Why only NETFLIX.</h2>
 
-
-      <h2 class="heading">The Social Network</h2>
-
-      <h4 class="heading" id="personal">N I S H A N T ' S &nbsp  C H O I C E </h4> 
+      <h4 class="heading" id="personal">ED I T O R S ’ C H O I C E</h4> 
       <p class="para">
        
-        MAR 2020<br>
- The Social Network is a 2010 American biographical drama film directed by David Fincher and written by Aaron Sorkin. Adapted from Ben Mezrich's 2009 book The Accidental Billionaires, it portrays the founding of social networking website Facebook and the resulting lawsuits. It stars Jesse Eisenberg as founder Mark Zuckerberg, along with Andrew Garfield as Eduardo Saverin, Justin Timberlake as Sean Parker, Armie Hammer as Cameron and Tyler Winklevoss, and Max Minghella as Divya Narendra. Neither Zuckerberg nor any other Facebook staff were involved with the project, although Saverin was a consultant for Mezrich's book.[4]
-
-Production of the film began in 2009, when Eisenberg, Timberlake, and Garfield were all announced to star. Principal photography began that same year in October in Cambridge, Massachusetts, and lasted until November. Additional scenes were shot in California, in the cities of Los Angeles and Pasadena, as a portion of the film was set in Silicon Valley. In 2010, it was announced that Trent Reznor and Atticus Ross would create the film's score, which was released on September 28, 2010.
+        MAR 2020
+        Streaming shows and movies over the internet is the best way to watch TV, and Netflix is the best choice for
+        streaming entertainment, period. It includes a wide variety of familiar network shows and more original series,
+        films, documentaries and specials than any of its myriad competitors. The world's first major streaming service
+        remains our favorite choice in 2021 thanks to its huge library of constantly-refreshed content and its easy
+        accessibility across different devices. If you're looking for something new to watch, Netflix should be your top
+        choice.
 
         .</p>
-
-      <br><br>
       <div>
-        <a href = "https://www.netflix.com/title/70132721"><p class="watch" id="grade">watch on Netflix</p></a>
-        <video class="cart" poster="" autoplay loop muted >
-          <source src="{% static '/videos/homevid.mp4' %}" type="video/mp4">
+        <p class="watch" id="grade"> Watch Some Coolest MOVIES</p>
+        <video class="cart" poster="" autoplay loop >
+          <source src="yt1s.com - The Social Network 2010  Hacking Scene  4K HD  Open Matte_1080p.mp4" type="video/mp4">
+
       </div>
-     
+          
+          <ul class="socials">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          </ul>
+      </div>
+
     </section>
 
   </main>

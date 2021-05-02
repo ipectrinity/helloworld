@@ -24,7 +24,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'netlix-and-chill.herokuapp.com']
 
@@ -126,10 +126,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
-    'static',
-]
+
+# STATICFILES_DIRS = [
+#     'static'
+# ]
 
 #mail settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

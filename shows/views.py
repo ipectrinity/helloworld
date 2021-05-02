@@ -16,8 +16,8 @@ def blog_index(request):
 
 
 
-def blog_view(request, slug):
-    blog = Blog.objects.filter(slug=slug).first()
+def blog_view(request):
+    blog = Blog.objects.all
 
     context = {
         'blog' : blog
@@ -32,3 +32,6 @@ def login(request):
 
 def signup(request):
     return render(request, 'signup.html')
+
+def comment(request):
+    return render(request, 'comment.html')
