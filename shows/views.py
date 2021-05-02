@@ -16,8 +16,8 @@ def blog_index(request):
 
 
 
-def blog_view(request):
-    blog = Blog.objects.all
+def blog_view(request, slug):
+    blog = Blog.objects.filter(slug=slug).first()
 
     context = {
         'blog' : blog

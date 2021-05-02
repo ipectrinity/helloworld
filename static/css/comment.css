@@ -3,12 +3,12 @@
     flex-direction: column;
     width:400px;
     margin-top: 20px;
-    transform: translate(150%,-5%);
+    transform: translate(130%,-5%);
    
     
 }
 .manage{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin-top: 20px;
     background-color: white;
     border-radius: 10px;

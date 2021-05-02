@@ -44,7 +44,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="{% url 'blog-view' %}" class="nav-link">
+                <a href="" class="nav-link">
                     <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="cat" role="img"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                         class="svg-inline--fa fa-cat fa-w-16 fa-9x">
@@ -57,7 +57,7 @@
                                 class="fa-primary"></path>
                         </g>
                     </svg>
-                    <span class="link-text">Blog( Under Maintainence )</span>
+                    <span class="link-text">Blog</span>
                 </a>
             </li>
 
@@ -184,26 +184,27 @@
 
             </div>
 
-
         {% for unit in blog %}
-            <div class="box">
-                <h2 class="name">{{unit.title}}</h2>
+            {% if unit.By_Nishant %}
+                <div class="box">
+                    <h2 class="name">{{unit.title}}</h2>
 
-                {% if unit.link %}
-                <a href="{{unit.link}}" class="buy">watch show</a>
-                {% endif %}
+                    {% if unit.link %}
+                    <a href="{{unit.link}}"  class="buy">watch show</a>
+                    {% endif %}
 
-                <div class="circle"></div>
-                {% if unit.image %}
-                <img src="{{unit.image.url}}" class="product" height="250px" width="320px">
-                {% else %}
-                <img src="{% static '/images/default' %}" class="product" height="250px" width="320px">
-                {% endif %}
+                    <div class="circle"></div>
+                    {% if unit.image %}
+                    <img src="{{unit.image.url}}" class="product" height="250px" width="320px">
+                    {% else %}
+                    <img src="{% static '/images/default' %}" class="product" height="250px" width="320px">
+                    {% endif %}
 
-            </div>
+                </div>
+            {% endif %}
         {% endfor %}
 
-            <div class="container">
+    <div class="container">
 
 
 

@@ -11,4 +11,3 @@ admin.site.index_title = "Welcome to admin's Den"
 urlpatterns = [
     path('contact-us/', contact, name = "contact-us")
 ]
-

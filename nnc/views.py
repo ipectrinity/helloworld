@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from shows.models import Blog
 
 def home_page(request):
-    context = {}
+    blogs = Blog.objects.all
+    context = {'blogs' : blogs}
 
     return render(request, 'home.html', context)

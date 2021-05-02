@@ -20,10 +20,12 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="{% static '/css/div.css' %}">
+
   <style>
     /* i can use diffrent css here  */
     html,
-    body {
+    body { 
 
       height: 100%;
 
@@ -448,6 +450,36 @@ filter:blur(100px);
       width: 400px;
       height:400px;
     }
+
+
+.nish{
+    background-color: rgba(0, 0, 0, 0.37);
+    color:white;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Baloo Bhai 2', cursive;
+    border-radius: 10px;
+    padding:10px;
+    transition-property: all;
+    transition-duration: 0.7s;
+}
+.nish:hover{
+    transform: scale(1.06);
+    filter:blur(1px);
+}
+.funny{
+    color:white;
+    font-size: 30px;
+    
+    font-family: 'Zilla Slab', serif;
+}
+.read{
+    text-decoration:none;
+    
+}
+
+.read:hover{
+    color:red;
+}
   </style>
 
 </head>
@@ -456,7 +488,7 @@ filter:blur(100px);
 
   <nav class="menu-activea">
 
-    <h1>NAVBAR</h1>
+    <h1>NAV</h1>
 
     <ul class="fontlist">
 
@@ -465,8 +497,6 @@ filter:blur(100px);
       <li><a href="">Netflix'n'Chill</a></li>
 
       <li><a href="{% url 'blog-index' %}">Nishant's Recommended</a></li>
-
-      <li><a href="{% url 'blog-view' %}">Blog ( Under Maintainence )</a></li>
 
       <li><a href="{% url 'login-page' %}">Login / Sign-Up</a></li>
 
@@ -535,6 +565,22 @@ Production of the film began in 2009, when Eisenberg, Timberlake, and Garfield w
         <video class="cart" poster="" autoplay loop muted >
           <source src="{% static '/videos/homevid.mp4' %}" type="video/mp4">
       </div>
+
+      <br><br>
+      <h1>Check Out these Awesome Shows</h1>
+      <br>
+
+<br><br>
+      {% for unit in blogs %}
+        <h2 class="funny">{{unit.genre}}</h2>
+        <div class="nish" id="mad">
+          <h3>{{unit.title}}</h3><br>
+          <h4>Content:</h4>
+          {{ unit.content | safe |slice:1000 }}...
+          <h5>Date-{{unit.datetime}}</h5>
+  <span><a href="/blog-index/{{unit.slug}}" class="read">READ MORE</a></span>
+        </div>
+      {% endfor %}
      
     </section>
 

@@ -1,12 +1,34 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog-View</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/fullview.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
+
 <body>
-    <h1>UNDER MAINTAINENCE</h1>
+    <h1>{{blog.title}}</h1><br>
+    <div>
+        <img src="{{blog.image.url}}" class="image" width="550px" height="480px">
+    </div><br>
+    <div>
+        <h2 class="summary"><a href = {{blog.link}}>watch now</h2>
+        <p class="para">
+            {{blog.content | safe}}
+        </p>
+    </div>
+    <button onClick="javascript:history.go(-1)"; type="button" id="button">
+        <span class="iconify" id="backbutton"data-icon="bi:arrow-left-circle-fill" data-inline="false"></span></button>
+
 </body>
+
 </html>
+<button type="submit" id="button" onClick="javascript:history.go(-1);">

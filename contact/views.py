@@ -7,16 +7,15 @@ from django.http import JsonResponse
 # Create your views here.
 def contact(request):
 
-    context = {}
-
     if request.method == 'POST':
-        name    = request.POST['name']
-        email   = request.POST['email']
+        name  = request.POST['name']
+        email  = request.POST['email']
         message = request.POST['message']
+
 
         contacts = ContactForm(name=name, email=email, message=message)
         contacts.save()
-
+        context = {'name' : name}
         ############
         subject = 'NoReply: Netflix and Chill'
         reply =  """
@@ -35,8 +34,9 @@ Stay tuned to be the Netflix Junkie! 😉😎
             [email],#to mail >> a list of mailss
             fail_silently=False,
         )
-
-    return render(request, 'contact.html', context)
+        return render(request, 'contact.html', context)
+    else:
+        return render(request, 'contact.html')
 
 def post_json(request):
     data = list(ContactForm.objects.values())
