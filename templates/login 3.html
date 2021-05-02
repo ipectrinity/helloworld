@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href=" .css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   
+</head>
+<body style="background-color: #303030;">
+        <div>
+    <div class="car" id="max4">
+        <div id="logo" class="air"></div>
+        <i><span class="iconify" data-icon="bx:bxs-user" data-inline="false"></span> <input class="air" type="text"
+                placeholder="Enter your user name"></i>
+        <i><span class="iconify" data-icon="bx:bxs-lock-alt" data-inline="false"></span><input class="air"
+                type="password" placeholder="Enter your password"></i>
+
+        <button class="air" id="polo" >Login Here</button>
+        <a class="air" id="forgetlink" href="https://www.google.com">Forgot password</a>
+        <a class="air" id="forgetlink" href="{% url 'signup-page' %}">Sign Up</a>
+
+         </div>
+                <button type="submit" id="button" onClick="javascript:history.go(-1);">
+         <span class="iconify" id="backbutton"data-icon="bi:arrow-left-circle-fill" data-inline="false"></span></button>
+
+     
+
+</body>
+</html>

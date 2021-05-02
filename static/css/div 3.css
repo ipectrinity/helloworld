@@ -1,0 +1,28 @@
+.nish{
+    background-color: rgba(0, 0, 0, 0.37);
+    color:white;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Baloo Bhai 2', cursive;
+    border-radius: 10px;
+    padding:10px;
+    transition-property: all;
+    transition-duration: 0.7s;
+}
+.nish:hover{
+    transform: scale(1.06);
+    filter:blur(1px);
+}
+.funny{
+    color:white;
+    font-size: 30px;
+    
+    font-family: 'Zilla Slab', serif;
+}
+.read{
+    text-decoration:none;
+    
+}
+
+.read:hover{
+    color:red;
+}

@@ -1,0 +1,50 @@
+.commentpage{
+    display:flex;
+    flex-direction: column;
+    width:400px;
+    margin-top: 20px;
+    transform: translate(130%,-5%);
+   
+    
+}
+.manage{
+    padding-bottom: 10px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color:red;
+    font-family: 'Zilla Slab', serif;
+    outline: none;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.manage:hover{
+    transform:scale(1.1);
+}
+#typemad{
+    height: 200px;
+}
+#button{
+    width:70px;
+    transform:translateX(163px);
+    color:red;
+  background-color: black;
+    font-family:cursive;
+
+    margin-bottom: 10px;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.76);
+}
+#name{
+    width:250px;
+margin-left: 70px;
+}
+#mail{
+    width:320px;
+    margin-left: 36px;
+}

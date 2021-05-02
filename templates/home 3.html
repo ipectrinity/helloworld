@@ -1,0 +1,657 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Netflix'n'Chill</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static '/css/div.css' %}">
+
+  <style>
+    /* i can use diffrent css here  */
+    html,
+    body { 
+
+      height: 100%;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: 'Roboto Condensed', sans-serif;
+
+      line-height: 1.7;
+
+      perspective-origin: 0% 50%;
+
+      perspective: 800px;
+
+      background:rgba(0, 0, 0, 0.747);
+
+
+
+    }
+
+    nav,
+    main {
+
+      transition: transform 150ms ease-out;
+
+    }
+
+    nav {
+
+      z-index: 100;
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 16em;
+
+      background-color: #353441;
+
+      transform: translateX(-16em);
+
+    }
+
+    nav.menu-active {
+
+      transform: translateX(0);
+
+    }
+
+    nav.menu-hover {
+
+      transform: translateX(-15em);
+
+    }
+
+    nav h1 {
+
+      z-index: 100;
+
+      display: block;
+
+      position: absolute;
+
+      top: 0;
+
+      right: -65px;
+
+      height: 60px;
+
+      width: 65px;
+
+      line-height: 60px;
+
+      font-size: 1em;
+
+      font-weight: 300;
+
+      letter-spacing: 1px;
+
+      color: #fff;
+
+      text-transform: uppercase;
+
+      text-align: center;
+
+      background-color: #353441;
+
+      cursor: pointer;
+
+      font-family: 'Baloo Bhai 2', cursive;
+
+    }
+
+    nav h1:hover {
+
+      color: #353441;
+
+      background:  #662d91;
+      border-radius: 7px;
+
+    }
+
+    nav ul {
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    nav li {
+
+      display: inline-block;
+
+      padding: 0 1em;
+
+      width: 100%;
+
+      height: 60px;
+
+      color: #bd0000;
+
+      line-height: 60px;
+
+      background-color: #353441;
+
+      transition: all 0.5s ease-in;
+
+    }
+
+    /* targetting the color of bar */
+
+    nav li:nth-of-type(2n) {
+
+      background-color: #3a3947;
+
+    }
+
+    nav li:hover {
+
+      background: rgb(27, 25, 25);
+
+      color: rgb(100, 19, 155);
+
+
+
+    }
+
+    main {
+
+      z-index: 0;
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      bottom: 0;
+
+      right: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      background-image: url(ji.jpeg);
+
+      transform-origin: 0% 50%;
+
+      background-size: contain;
+
+    }
+
+    main:after {
+
+      content: '';
+
+      display: block;
+
+      position: absolute;
+
+      z-index: 1;
+
+      top: 0;
+
+      left: 0;
+
+      bottom: 0;
+
+      right: 0;
+
+      background: linear-gradient(to right, transparent, rgba(33, 33, 45, .5));
+
+      visibility: hidden;
+
+      opacity: 0;
+
+      transition: opacity 150ms ease-out, visibility 0s 150ms;
+
+    }
+
+    main.menu-active {
+
+      border-radius: 0.001px;
+
+      transform: translateX(16em) rotateY(15deg);
+
+    }
+
+    main.menu-active:after {
+
+      visibility: visible;
+
+      opacity: 1;
+
+      transition: opacity 150ms ease-out, visibility 0s;
+
+    }
+
+    main.menu-hover {
+
+      border-radius: 0.001px;
+
+      transform: translateX(1em) rotateY(1deg);
+
+    }
+
+    main section {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      bottom: 0;
+
+      right: 0;
+
+      margin: auto;
+
+      padding: 1em 4em;
+
+      max-width: 1200px;
+
+      overflow: auto;
+
+      background-color: rgba(0, 0, 0, 0.3);
+
+    }
+
+    section h1 {
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      font-size: 2em;
+
+    }
+
+    section p {
+
+      display: inline-block;
+
+      margin: 16px 0;
+
+    }
+
+    .para {
+      color: rgb(0, 0, 0);
+     
+      
+      font-family: 'Baloo Bhai 2', cursive;
+      font-size: 17px;
+    }
+
+   
+
+    
+
+    .netflixcolor {
+      color: red;
+      margin-left: 356px;
+      margin-bottom: 20px;
+      margin-top: -128px;
+      font-size: 4em;
+      transition-property: all;
+      transition-duration: 1s;
+      display: flex;
+      animation-name: car;
+     }
+
+     .toggle{
+
+      color: white;
+      font-family: 'Baloo Bhai 2', cursive;
+      animation-name: car ;
+      animation-iteration-count: infinite;
+      animation-duration: 6s;
+      animation-timing-function:ease-out;
+
+
+    }
+    @keyframes car {0%{
+      color:rgb(247, 17, 17);
+      font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    60%{
+      color:black;
+     
+    }
+      100%{
+        color:red;
+        opacity:0;
+      }
+    }
+
+    .fontlist li a {
+      font-family: 'Baloo Bhai 2', cursive;
+      text-decoration: none;
+      color: rgb(114, 99, 182);
+    }
+
+    .gradient {
+      background-color: red;
+      margin-bottom: 60px;
+      margin-top: -80px;
+      filter: blur(100px);
+    }
+
+    .cart {
+      filter: contrast(100%) brightness(110%);
+      width: 1058px;
+      
+      box-shadow: 10px 10px 10px 10px red;
+      box-shadow: -10px -10px 40px red;
+      border-radius: 10px;
+    }
+
+    .watch {
+      position: absolute;
+      z-index: 2;
+      margin-top: 261px;
+
+      margin-left: 124px;
+      font-size: 4em;
+
+      font-family: 'Zilla Slab', serif;
+      animation-name: text;
+      animation-duration: 5s;
+      animation-iteration-count: 0;
+    }
+
+    .watch:hover {
+      animation-name: text;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes text {
+      0% {
+        color: rgb(255, 0, 0);
+
+      }
+
+      33% {
+        color: rgb(231, 17, 17);
+        font-size: 3em;
+
+      }
+
+      66% {
+        filter: blur(100px);
+        color: rgb(32, 14, 14);
+      }
+
+      100% {
+        visibility: hidden;
+        color:white;
+        opacity:0;
+      }
+    }
+
+    .heading{
+      color:lightsteelblue;
+    }
+    #personal{
+      color:rgb(226, 128, 17);
+      font-family: 'Baloo Bhai 2', cursive;
+    }
+    #grade{
+      transition-property: all;
+      color: white;
+      transition-duration: 2s;
+    }
+    #grade:hover{
+filter:blur(100px);
+
+    }
+    .random{
+
+      width: 400px;
+      height:400px;
+    }
+
+
+.nish{
+    background-color: rgba(0, 0, 0, 0.37);
+    color:white;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Baloo Bhai 2', cursive;
+    border-radius: 10px;
+    padding:10px;
+    transition-property: all;
+    transition-duration: 0.7s;
+}
+.nish:hover{
+    transform: scale(1.06);
+    filter:blur(1px);
+}
+.funny{
+    color:white;
+    font-size: 30px;
+    
+    font-family: 'Zilla Slab', serif;
+}
+.read{
+    text-decoration:none;
+    
+}
+
+.read:hover{
+    color:red;
+}
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="menu-activea">
+
+    <h1>NAV</h1>
+
+    <ul class="fontlist">
+
+   <ul class="fontlist">
+
+      <li><a href="">Netflix'n'Chill</a></li>
+
+      <li><a href="{% url 'blog-index' %}">Nishant's Recommended</a></li>
+
+      <li><a href="{% url 'login-page' %}">Login / Sign-Up</a></li>
+
+      <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+
+    </ul>
+
+    </ul>
+
+  </nav>
+
+  <main>
+
+    <section>
+
+      <br><br><br>
+      <div class="gradient">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi veniam modi
+        doloremque odio, voluptas eaque quas eius quibusdam id doloribus, ratione quis molestiae enim ipsum corrupti,
+        dolor corporis neque illum facere! Suscipit deserunt minus, voluptatum et beatae architecto nam mollitia?
+        Voluptates ullam nulla libero ducimus architecto at iusto tempora?</div>
+
+      <span class="netflixcolor">
+       <ul class="toggle">N</ul> 
+       <ul class="toggle">e</ul> 
+       <ul class="toggle">t</ul> 
+       <ul class="toggle">f</ul> 
+       <ul class="toggle">l</ul> 
+       <ul class="toggle">i</ul> 
+       <ul class="toggle">x</ul> 
+       <ul class="toggle">'n'</ul> 
+       <ul class="toggle">C</ul> 
+       <ul class="toggle">h</ul> 
+       <ul class="toggle">i</ul> 
+       <ul class="toggle">l</ul> 
+       <ul class="toggle">l</ul> 
+        
+      </span>
+
+      <br>
+      <h2 class="heading">Welcome!</h2>
+      <p class="para">Welcome to Netlix’n’Chill
+Here you can stay tuned with the latest and the hottest of the Netflix shows. Read about them, watch the trailers, and express yourself! Here we got a community of Netflix-lovers who suggest great Shows and Movies! Watch on IOS, Android, even on your TV!
+Got a holiday? Come to your very own site to choose what should u explore now!
+
+
+Some of the binge shows and movies, some comedy or any other way you like it! We got it for you! Be a permanent member of Netflix’n’Chill society and let’s make your purchase worth it!</p>
+
+
+
+
+      <h2 class="heading">The Social Network</h2>
+
+      <h4 class="heading" id="personal">N I S H A N T ' S &nbsp  C H O I C E </h4> 
+      <p class="para">
+       
+        MAR 2020<br>
+ The Social Network is a 2010 American biographical drama film directed by David Fincher and written by Aaron Sorkin. Adapted from Ben Mezrich's 2009 book The Accidental Billionaires, it portrays the founding of social networking website Facebook and the resulting lawsuits. It stars Jesse Eisenberg as founder Mark Zuckerberg, along with Andrew Garfield as Eduardo Saverin, Justin Timberlake as Sean Parker, Armie Hammer as Cameron and Tyler Winklevoss, and Max Minghella as Divya Narendra. Neither Zuckerberg nor any other Facebook staff were involved with the project, although Saverin was a consultant for Mezrich's book.[4]
+
+Production of the film began in 2009, when Eisenberg, Timberlake, and Garfield were all announced to star. Principal photography began that same year in October in Cambridge, Massachusetts, and lasted until November. Additional scenes were shot in California, in the cities of Los Angeles and Pasadena, as a portion of the film was set in Silicon Valley. In 2010, it was announced that Trent Reznor and Atticus Ross would create the film's score, which was released on September 28, 2010.
+
+        .</p>
+
+      <br><br>
+      <div>
+        <a href = "https://www.netflix.com/title/70132721"><p class="watch" id="grade">watch on Netflix</p></a>
+        <video class="cart" poster="" autoplay loop muted >
+          <source src="{% static '/videos/homevid.mp4' %}" type="video/mp4">
+      </div>
+
+      <br><br>
+      <h1>Check Out these Awesome Shows</h1>
+      <br>
+
+<br><br>
+      {% for unit in blogs %}
+        <h2 class="funny">{{unit.genre}}</h2>
+        <div class="nish" id="mad">
+          <h3>{{unit.title}}</h3><br>
+          <h4>Content:</h4>
+          {{ unit.content | safe |slice:1000 }}...
+          <h5>Date-{{unit.datetime}}</h5>
+  <span><a href="/blog-index/{{unit.slug}}" class="read">READ MORE</a></span>
+        </div>
+      {% endfor %}
+     
+    </section>
+
+  </main>
+
+  
+
+  <script>
+
+    (function () {
+
+
+
+      var nav = $('nav'),
+
+        menu = $('nav h1'),
+
+        main = $('main'),
+
+        open = false,
+
+        hover = false;
+
+
+
+      menu.on('click', function () {
+
+        open = !open ? true : false;
+
+        nav.toggleClass('menu-active');
+
+        main.toggleClass('menu-active');
+
+        nav.removeClass('menu-hover');
+
+        main.removeClass('menu-hover');
+
+        console.log(open);
+
+      });
+
+      menu.hover(
+
+        function () {
+
+          if (!open) {
+
+            nav.addClass('menu-hover');
+
+            main.addClass('menu-hover');
+
+          }
+
+        }, function () {
+
+          nav.removeClass('menu-hover');
+
+          main.removeClass('menu-hover');
+
+        }
+
+      );
+
+
+
+    })();
+
+
+
+  </script>
+
+</body>
+
+</html>
